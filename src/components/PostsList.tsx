@@ -13,12 +13,13 @@ import {
 import Post from './Post'
 import  SkeletonPost from './skeletons/SkeletonPost';
 
-// import { postType }  from '../app.Types'
-// type PostsListProp = {
-//   currentUserId: number;
-// }
+import { postType }  from '../app.Types';
 
-const PostsList = ({ currentUserId }) => {
+type PostsListProp = {
+  currentUserId: number;
+}
+
+const PostsList = ({ currentUserId }: PostsListProp) => {
 
     const {
         isLoading,
@@ -52,7 +53,7 @@ const PostsList = ({ currentUserId }) => {
     } else {
         content = (
             <main>
-                {posts.map((post) => {
+                {posts.map((post: postType) => {
                     return <Post key={post.id} post={post} user={user} />
                 })}
             </main>

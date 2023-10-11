@@ -54,7 +54,7 @@ html {
 
 body {
     background-color: var(--BGCOLOR);
-    max-width: 800px;
+    max-width: 1000px;
     min-height: 100vh;
     margin: auto;
 }
@@ -95,7 +95,7 @@ main {
 
 /* || CLASSES */
 .selectMenu  {
-    width: 270px;
+    width: 300px;
     margin-top: 0.25rem;
     padding: 0.25rem;
     border-radius: 0.75rem;
@@ -124,6 +124,10 @@ main {
 
 .post p:nth-child(5) {
     font-style: italic;
+}
+
+h1 {
+    text-align: center;
 }
 
 /* || MEDIA QUERIES */
