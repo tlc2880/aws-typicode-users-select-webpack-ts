@@ -1,4 +1,6 @@
 import Nav from "./Nav"
+import IMAGE from './react.png'
+import LOGO from './React.svg'
 
 type HeaderProps = {
   currentUserId: number;
@@ -8,7 +10,12 @@ type HeaderProps = {
 const Header = ({ currentUserId, setCurrentUserId }: HeaderProps) => {
   return (
     <header>
-      <h1>Typicode User Blogs</h1>
+      <h1>
+        <img src={IMAGE} alt="React Logo" width="30" height="30" />
+          Suspense Skeleton Webpack TypeScript Typicode User Blogs
+        <img src={LOGO} alt="React Logo" width="30" />
+      </h1>
+      <br />
       <Nav
         currentUserId={currentUserId}
         setCurrentUserId={setCurrentUserId}

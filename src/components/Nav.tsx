@@ -10,6 +10,7 @@ type NavProps = {
   setCurrentUserId: Dispatch<React.SetStateAction<number>>;
 }
 import { userType } from '../app.Types';
+
 const Nav = ({ currentUserId, setCurrentUserId }: NavProps) => {
     const {
         isLoading,
