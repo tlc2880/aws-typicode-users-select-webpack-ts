@@ -1,6 +1,7 @@
 import Nav from "./Nav"
 import IMAGE from './react.png'
 import LOGO from './React.svg'
+import Counter from './Counter'
 
 type HeaderProps = {
   currentUserId: number;
@@ -14,6 +15,8 @@ const Header = ({ currentUserId, setCurrentUserId }: HeaderProps) => {
         <img src={IMAGE} alt="React Logo" width="30" height="30" />
           Suspense Skeleton Webpack TypeScript Typicode User Blogs
         <img src={LOGO} alt="React Logo" width="30" />
+        <p>{process.env.NODE_ENV}</p>
+        <Counter />
       </h1>
       <br />
       <Nav
