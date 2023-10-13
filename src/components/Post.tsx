@@ -1,8 +1,8 @@
-import { postType, userType }  from '../app.Types';
+import { postType, userType } from '../app.Types'
 
 type PostProps = {
-  post: postType;
-  user: userType;
+  post: postType
+  user: userType
 }
 
 const Post = ({ post, user }: PostProps) => {
@@ -11,7 +11,9 @@ const Post = ({ post, user }: PostProps) => {
       <h2>{post.title}</h2>
       <p>{post.body}</p>
       <p>Post ID: {post.id}</p>
-      <p>Author: {user.name} from {user.company.name}</p>
+      <p>
+        Author: {user.name} from {user.company.name}
+      </p>
       <p>Tagline: {user.company.catchPhrase}</p>
     </article>
   )

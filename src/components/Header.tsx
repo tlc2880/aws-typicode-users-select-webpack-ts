@@ -1,11 +1,10 @@
-import Nav from "./Nav"
+import Nav from './Nav'
 import IMAGE from './react.png'
 import LOGO from './React.svg'
-import Counter from './Counter'
 
 type HeaderProps = {
-  currentUserId: number;
-  setCurrentUserId: React.Dispatch<React.SetStateAction<number>>;
+  currentUserId: number
+  setCurrentUserId: React.Dispatch<React.SetStateAction<number>>
 }
 
 const Header = ({ currentUserId, setCurrentUserId }: HeaderProps) => {
@@ -13,16 +12,12 @@ const Header = ({ currentUserId, setCurrentUserId }: HeaderProps) => {
     <header>
       <h1>
         <img src={IMAGE} alt="React Logo" width="30" height="30" />
-          Suspense Skeleton Webpack TypeScript Typicode User Blogs
+        Suspense Skeleton Webpack TypeScript Typicode User Blogs
         <img src={LOGO} alt="React Logo" width="30" />
         <p>{process.env.NODE_ENV}</p>
-        <Counter />
       </h1>
       <br />
-      <Nav
-        currentUserId={currentUserId}
-        setCurrentUserId={setCurrentUserId}
-      />
+      <Nav currentUserId={currentUserId} setCurrentUserId={setCurrentUserId} />
     </header>
   )
 }
