@@ -1,6 +1,6 @@
-import { useState } from "react"
-import Header from "./components/Header"
-import PostsList from "./components/PostsList"
+import { useState } from 'react'
+import Header from './components/Header'
+import PostsList from './components/PostsList'
 
 function App() {
   const [currentUserId, setCurrentUserId] = useState(0)
@@ -15,4 +15,4 @@ function App() {
     </>
   )
 }
-export default App;
+export default App

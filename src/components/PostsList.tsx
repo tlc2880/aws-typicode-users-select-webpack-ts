@@ -17,12 +17,13 @@ type PostsListProp = {
 }
 
 const PostsList = ({ currentUserId }: PostsListProp) => {
-    const {
-        isLoading,
-        error,
-        data: posts,
-    } = 
-    useSWR( [postsCacheKey, currentUserId], ([url, userId]) => getPostsByUserId(url, userId))
+  const {
+    isLoading,
+    error,
+    data: posts,
+  } = useSWR([postsCacheKey, currentUserId], ([url, userId]) =>
+    getPostsByUserId(url, userId)
+  )
 
   const {
     isLoading: isLoadingUser,
@@ -32,27 +33,28 @@ const PostsList = ({ currentUserId }: PostsListProp) => {
     ([url, userId]) => getUserById(url, userId)
   )
 
-let content
-if (currentUserId === 0) {
+  let content
+  if (currentUserId === 0) {
     content = <p className="loading">Select an Employee to view posts</p>
-} else if (isLoading || isLoadingUser) {
+  } else if (isLoading || isLoadingUser) {
     content = (
-        [...Array(10).keys()].map(i => {
-            return <SkeletonPost key={i} />
-        })
-    )
+      [...Array(10).keys()].map(i => 
+{
+      return <SkeletonPost key={i} />
+    })
+  )
 } else if (error || userError) {
     content = <p>{error.message || userError.message}</p>
-} else {
+  } else {
     content = (
-    <main>
-            {posts.map((post: postType) => {
-                return <Post key={post.id} post={post} user={user} />
-            })}
-        </main>
+      <main>
+        {posts.map((post: postType) => {
+          return <Post key={post.id} post={post} user={user} />
+        })}
+      </main>
     )
-}
+  }
 
-return content
+  return content
 }
 export default PostsList
